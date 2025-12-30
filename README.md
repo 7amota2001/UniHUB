@@ -133,11 +133,13 @@ const pool = mysql.createPool({
     queueLimit: 0
 });
 ```
+> **Security Note**: For production environments, avoid using the root user. Create a dedicated database user with appropriate permissions and use strong passwords.
 
-2. **Environment Variables**: Edit `Back-end/environmet.env`
+2. **Environment Variables**: Edit `Back-end/environment.env`
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
 ```
+> **Security Warning**: Never commit API keys or sensitive credentials to version control. Keep your `.env` files private and add them to `.gitignore`.
 
 3. **Firebase Configuration**: 
    - Obtain your Firebase Admin SDK service account JSON file
@@ -219,7 +221,7 @@ UniHUB/
 │   ├── routes.js             # API routes definition
 │   ├── database.js           # Database configuration
 │   ├── package.json          # Backend dependencies
-│   └── environmet.env        # Environment variables
+│   └── environment.env       # Environment variables
 │
 ├── Front-End/
 │   ├── public/               # Public assets
